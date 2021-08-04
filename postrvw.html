@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>Post Review - Pranali Institute</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='home.css'>
+    <script integrity="sha256-4LLL/8HNaRj8uh7gRJk6iM9jbCAEBYEWS5z5sgu7cRY=" crossorigin="anonymous"  src='home.js'></script>
+    <script src="parallax.min.js"></script>
+</head>
+<style>
+    html , body {
+        margin: 0;
+    }
+    #frmhold{
+        margin-top: 10vh;
+        /* display: flex;
+        align-items: center;
+        justify-content: center; */
+        width: 30vw;
+        margin: 10vh 35vw;
+    }
+    input {
+        width: 28vw;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 5px 1vw;
+        font-size: 24px;
+        font-family: 'Poppins', sans-serif;
+    }
+    .reviewinp{
+        height: 30vh;
+    }
+    textarea{
+        width: 28vw;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 5px 1vw;
+        font-size: 24px;
+        font-family: 'Poppins', sans-serif;
+        margin-top: 20px;
+    }
+    button{
+        width: 30vw;
+        padding: 10px 10px; 
+        font-size: 24px;
+        font-family: 'Poppins', sans-serif;
+        border: 2px black solid;
+        background-color: black;
+        color: whitesmoke;
+        transition: .2s;
+    }
+    button:hover{
+        box-shadow: 0 0 10px 0 black;
+    }
+    #heading {
+        text-align: center;
+        font-family: 'Poppins', sans-serif;;
+    }
+    @media screen and (max-width: 600px){
+        #frmhold{
+        margin: 5vh 5vw;
+
+    }
+    textarea{
+        width: 90vw;
+        padding: 5px 0;
+    }
+    input{
+        width: 90vw;
+        padding: 5px 0;
+    }
+    button {
+        width: 90vw;
+
+        padding: 10px 1vw; 
+    }
+    #stickHeader{
+        position: relative;
+    }
+    }
+</style>
+<body>
+    <div id="mobileheader">
+        <img onclick="loadmennu()" src="menu.png">
+        <h4 id="mobileheadtex" style="display: none;">PRANALI'S BEAUTY ACADEMY</h4>
+    </div>
+    <div id="mobileheaderslide">
+        <a href="/Pranali%20Institute/home.html">Home</a>
+        <a href="/Pranali%20Institute/services.html">Services</a>
+        <a href="/Pranali%20Institute/courses.html">Courses</a>
+        <a href="/Pranali%20Institute/contact.html">Contact</a>
+    </div>
+    <div id="stickHeader">
+        <!-- <p class="head_opts">Home</p>
+        <p class="head_opts">Gallery</p>
+        <p class="head_opts">Contact Us</p>
+        <p class="head_opts">About</p> -->
+        <ul>
+            <li><a href="/Pranali%20Institute/home.html">Home</a></li>
+            <li><a href="/Pranali%20Institute/services.html">Services</a></li>
+            <li><a href="/Pranali%20Institute/courses.html">Courses</a></li>
+            <li><a href="/Pranali%20Institute/contact.html">Contact</a></li>
+          </ul>
+    </div>
+    <div id="frmhold">
+        <div id="heading">
+            <h1 id="texttoedit">Post a Review</h1>
+        </div>
+        <form id="rvwform" method="POST" action="review.php">
+            <input type="text" name="name" placeholder="Your Name ">
+            <!-- <input class="reviewinp" type="text" name="review"> -->
+            <textarea placeholder="Review ..." name="review" id="" cols="30" maxlength="120" form="rvwform" rows="5"></textarea>
+            <button id="postbtn" type="button" onclick="callPHP()">POST</button>
+        </form>
+    </div>
+</body>
+<script>
+    var i = 0;
+    var txt = 'Thank You ...';
+    var speed = 100;
+    function typeWriter() {
+    if (i < txt.length) {
+        document.getElementById("texttoedit").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    }
+    }
+    function callPHP() {
+        
+        let name = document.forms["rvwform"]["name"].value;
+        let review = document.forms["rvwform"]["review"].value;
+        var phpcodetosubmit = 'name='+name+'&review='+review;
+        if(!name=="" && !review==""){
+            $("#postbtn").text("Posting...");
+            $.ajax({
+                type : "POST",
+                url : "review.php",
+                data : phpcodetosubmit,
+                cache : false,
+                success : function (res){
+                    if(res == "true"){
+                        $("#rvwform").fadeOut();
+                        document.getElementById("texttoedit").innerText = '';
+                        typeWriter();
+                    }else{
+                        alert("Failed to post. Please try again in sometime.")
+                    }
+
+                    
+                }
+            })
+        }else{
+            alert("Fill all the Details.")
+        }
+        
+    }
+    </script>
+</html>

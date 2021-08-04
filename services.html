@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>Services - Pranali Institute</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='home.css'>
+    <script integrity="sha256-4LLL/8HNaRj8uh7gRJk6iM9jbCAEBYEWS5z5sgu7cRY=" crossorigin="anonymous"  src='home.js'></script>
+    
+</head>
+<body>
+    <div id="mobileheader">
+        <img onclick="loadmennu()" src="menu.png">
+        <h4 id="mobileheadtex" style="display: none;">PRANALI'S BEAUTY ACADEMY</h4>
+    </div>
+    <div id="mobileheaderslide">
+        <a href="/Pranali%20Institute/home.html">Home</a>
+        <a href="/Pranali%20Institute/services.html">Services</a>
+        <a href="/Pranali%20Institute/courses.html">Courses</a>
+        <a href="/Pranali%20Institute/contact.html">Contact</a>
+    </div>
+    <div id="stickHeader">
+        <!-- <p class="head_opts">Home</p>
+        <p class="head_opts">Gallery</p>
+        <p class="head_opts">Contact Us</p>
+        <p class="head_opts">About</p> -->
+        <ul>
+            <li><a href="/Pranali%20Institute/home.html">Home</a></li>
+            <li><a href="/Pranali%20Institute/services.html">Services</a></li>
+            <li><a href="/Pranali%20Institute/courses.html">Courses</a></li>
+            <li><a href="/Pranali%20Institute/contact.html">Contact</a></li>
+          </ul>
+    </div>
+    <div class="slider bg-2">
+
+        <h5 class="slide_header">Services</h5>
+
+        <div class="services_holder">
+            <div class="service_type ">
+                <figure class="servicefig">
+                    <div class="service_icon">
+                        <img src="Icons/Salon-free-img.png">
+                        <h4>Hair Styling</h4>
+                    </div>
+                    
+                    <p>Our world class hair care comprises of trendy and classic cuts, styles, colors and treatments: pick your option.​</p>
+                
+                </figure>
+               
+
+            </div>
+
+            <div class="service_type ">
+                <figure class="servicefig">
+                    <div class="service_icon">
+                        <img src="Icons/Kiss-free-img.png">
+                        <h4>Skin Treatment</h4>
+                    </div>
+                    <p>We offer individualized skin care that rejuvenates skin by combining specially prescribed products and skin care treatments.</p>
+                </figure>
+
+            </div>
+
+            <div class="service_type ">
+                <figure class="servicefig">
+                    <div class="service_icon">
+                        <img src="Icons/Lipstick-free-img.png">
+                        <h4>Makeup</h4>
+                    </div>
+                    
+                    <p>Want an edgy look for that party or magic touch for your wedding? Head over to Enchi salon and look Ecstatic!</p>
+                </figure>
+
+            </div>
+
+            <div class="service_type ">
+                <figure class="servicefig">
+                    <div class="service_icon">
+                        <img src="Icons/Relax-free-img.png">
+                        <h4>Full Body Massage</h4>
+                    </div>
+                    
+                    <p>we use excellent quality products and equipments keeping in mind the personal hygiene and beauty of customers to feel them relax.</p>
+                </figure>
+            </div>
+            
+            <div class="service_type ">
+                <figure class="servicefig">
+                    <div class="service_icon">
+                        <img src="Icons/Cosmetics-free-img.png">
+                        <h4>Beauty Treatment</h4>
+                    </div>
+                    
+                    <p>We use branded products to enhance your beauty keeping expert treatment with no side effects.</p>
+                </figure>
+            </div>
+            
+            <div class="service_type ">
+                <figure class="servicefig">
+                    <div class="service_icon">
+                        <img src="Icons/Nail-free-img.png">
+                        <h4>Clean Nail Art</h4>
+                    </div>
+                    
+                    <p>We’re only too happy to change or add polish and contribute just a little more colour to your life</p>
+                </figure>
+            </div>
+
+            
+            <div class="service_type ">
+                <figure class="servicefig">
+                    <div class="service_icon">
+                        <img src="Icons/Hot-stones-free-img.png">
+                        <h4>Fully Equipped Spa</h4>
+                    </div>
+                    
+                    <p>A series of short massages to bring quick relief to aching body parts are on the cards at Roop Rang.</p>
+                </figure>
+            </div>
+
+            
+            <div class="service_type ">
+                <figure class="servicefig">
+                    <div class="service_icon">
+                        <img src="Icons/Engagement-Ring-free-img.png">
+                        <h4>Bridal Makeup</h4>
+                    </div>
+                    
+                    <p>We provide wide verity of packages for weddings, help them look beautiful on their special day.</p>
+                </figure>
+            </div>
+            
+
+        </div>
+        <div class="slider">
+            <div id="register">
+                <h1>FOR ENQUIRY CALL US AT +91-77458-73836</h1>
+            </div>
+        </div>  
+        <div class="slider">
+            <div id="footer">
+                <div id="footcontent">
+                    <h2 style="margin-bottom: 5vh; font-size: 30px;">+91 77458 73836</h2>
+                <h2 id="toputthnks">JOIN OUR LIST</h2>
+                <p>Subscribe to our mailing list to receive updates and promotional offers.</p> 
+                <form id="maillistsub">
+                    <input type="text" placeholder="Email Id Or Phone No." name="mailId">
+                    <button id="subbtn" type="button" onclick="submitlist()">SUBSCRIBE</button>
+                </form>
+                <a href="https://www.instagram.com/pranalisbeauty/">
+                    <img id="instalogo" src="Instagram-Logo.jpg">
+                </a>
+                <p>Pranali's Beauty Academy and Institute ©2021</p>
+                <a style="color: whitesmoke;text-transform: none; font-size: 14px;" href="https://www.instagram.com/anandkamble_/">
+                    <p>Devoloped by Anand</p>
+                </a>
+                </div>
+            </div>
+        </div>
+        
+</div>
+</body>
+
+</html>

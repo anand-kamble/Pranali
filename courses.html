@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>Courses - Pranali Institute</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+ <!--    <link rel='stylesheet' type='text/css' media='screen' href='home.css'> -->
+    <script src="parallax.min.js"></script>
+</head>
+<script>
+    console.log(atob('ICAgICAgICAgICAgICAgICAgICBfICAgICAgICAgICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgICAgIFxgKi0uICAgICAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICAgICAgICAgICkgIF9gLS4gICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgICAgICAuICA6IGAuIC4gICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgICAgIDogXyAgICcgIFwgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICAgICAgOyAqYCBfLiAgIGAqLS5fICAgICAgICAgIA0KICAgICAgICAgICAgICAgICAgICBgLS4tJyAgICAgICAgICBgLS4gICAgICAgDQogICAgICAgICAgICAgICAgICAgICAgICA7ICAgICAgIGAgICAgICAgYC4gICAgIA0KICAgICAgICAgICAgICAgICAgICAgICAgOi4gICAgICAgLiAgICAgICAgXCAgICANCiAgICAgICAgICAgICAgICAgICAgICAgIC4gXCAgLiAgIDogICAuLScgICAuICAgDQogICAgICAgICAgICAgICAgICAgICAgICAnICBgKy47ICA7ICAnICAgICAgOiAgIA0KICAgICAgICAgICAgICAgICAgICAgICAgOiAgJyAgfCAgICA7ICAgICAgIDstLiANCiAgICAgICAgICAgICAgICAgICAgICAgIDsgJyAgIDogOmAtOiAgICAgXy5gKiA7DQpbIERldm9sb3BlZCBCeSBBbmFuZCBdIC4qJyAvICAuKicgOyAuKmAtICsnICBgKicgDQogICAgICAgICAgICAgICAgICAgICAgIGAqLSogICBgKi0qICBgKi0qJw0KDQpDb250YWN0IE1lIG9uIEluc3RhZ3JhbSBAYW5hbmRrYW1ibGVfDQpodHRwczovL3d3dy5pbnN0YWdyYW0uY29tL2FuYW5ka2FtYmxlXy8NCg=='))
+    $(document).mousedown(function(e) 
+{
+    var container = $("#mobileheaderslide");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) 
+    {
+        $('#mobileheaderslide').hide('slide', {direction: 'left'}, 500);
+    }
+});
+    $('.parallax-window').parallax({imageSrc: 'Images/atikah-akhtar-hOk9aETAS7Y-unsplash.jpg'});    
+    function detectMob() {
+  const toMatch = [
+      /Android/i,
+      /webOS/i,
+      /iPhone/i,
+      /iPad/i,
+      /iPod/i,
+      /BlackBerry/i,
+      /Windows Phone/i
+  ];
+
+  return toMatch.some((toMatchItem) => {
+      return navigator.userAgent.match(toMatchItem);
+  });
+}
+    var isMenuHidden = true;
+    function loadmennu(){
+    if(isMenuHidden == false){
+    $('#mobileheaderslide').hide('slide', {direction: 'left'}, 500);
+    isMenuHidden = true;
+    }else{
+        $('#mobileheaderslide').show('slide', {direction: 'left'}, 500);
+        isMenuHidden = false;
+    }
+    }
+    function pageloaded() {
+    var loader = document.getElementById("loadscr");
+    var content = document.getElementById("pagecontent");
+    loader.remove();
+    content.style.visibility = 'visible';
+    //init();
+    var dir1 = 'left' , dir2 = 'right';
+    if(detectMob() == true){
+      dir1 = 'up';
+      dir2 = 'down'
+    }
+    $('#loadscr1').hide('slide', {direction: dir1}, 1000);
+    $('#loadscr2').hide('slide', {direction: dir2}, 1000);
+    $("#stickHeader").slideDown();
+    vl = document.getElementById("vl");
+}
+</script>
+<style>
+    html , body{
+        margin :0 ;
+    } 
+    .coursepgslidermrg{
+  margin-bottom: 10vh;
+}
+#mobileheader{
+  height: 5vh;
+  width: 100vw;
+  position: fixed;
+  background-color: rgb(0, 0, 0);
+  z-index: 990;
+  visibility: hidden;
+}
+
+#mobileheader img {
+  height: 3vh;
+  filter: invert();
+  margin: 2vw 0 0 2vw;
+}
+#mobileheader h4 {
+  color: whitesmoke;
+  position: absolute;
+  top: 0vw;
+  width: 80vw;
+  margin-left: 10vw;
+  text-align: center;
+  font-family: forOpts;
+  transform: translate(0%,-50%);
+}
+#mobileheaderslide{
+  position: fixed;
+  height: 100%;
+  background-color: whitesmoke;
+  width: 50vw;
+  padding-top: 5vh;
+  z-index: 989;
+  display: none;
+  visibility: hidden;
+}
+    #courses{
+  height: 80vh;
+  width: 100vw;
+  background-color: transparent;
+}
+#coursecat{
+  position: absolute;
+  border-color: rgb(29, 29, 29) transparent red rgb(29, 29, 29);
+  border-style: solid;
+  border-width: 80vh 200px 0px 30vw;
+  height: 0px;
+  width: 0px;
+  margin: 0vw;
+}
+#coursecattext{
+  position: absolute;
+  background-color: transparent;
+  height: 80vh;
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#coursecattext h1 {
+  font-family: forOpts;
+  color: whitesmoke;
+}
+#coursecattext h3{
+  text-align: left;
+  font-family: forOpts;
+  color: whitesmoke;
+}
+#coursedetail{
+  width: 100vw;
+  height: 80vh;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+#coursedetailtext{
+  position: absolute;
+  margin-left: 50vw;
+  font-family: forOpts;
+ 
+}
+#coursedetailschild{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+#coursecartextchild h3{
+  color: whitesmoke;
+  transition: 0.2s;
+}
+#coursecartextchild h3:hover{
+  color: #888;
+}
+#handsontrin{
+  color: whitesmoke;
+}
+.traning_grid{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  color: whitesmoke;
+}
+#coursecartextchild h3 {
+  cursor: pointer;
+}
+#register{
+  height: 50vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#register H1 {
+  font-family: forOpts;
+}
+
+.coursepgslidermrg{
+  margin-bottom: 10vh;
+}
+#mobileheader{
+  height: 5vh;
+  width: 100vw;
+  position: fixed;
+  background-color: rgb(0, 0, 0);
+  z-index: 991;
+  visibility: hidden;
+}
+
+#mobileheader img {
+  height: 3vh;
+  filter: invert();
+  margin: 2vw 0 0 2vw;
+}
+#mobileheader h4 {
+  color: whitesmoke;
+  position: absolute;
+  top: 0vw;
+  width: 80vw;
+  margin-left: 10vw;
+  text-align: center;
+  font-family: forOpts;
+  transform: translate(0%,-50%);
+}
+#mobileheaderslide{
+  position: fixed;
+  height: 100%;
+  background-color: whitesmoke;
+  width: 50vw;
+  padding-top: 5vh;
+  z-index: 999;
+  display: none;
+  visibility: hidden;
+}
+#stickHeader{
+    position: fixed;
+    top: 0%;
+    background-color: rgb(255, 255, 255);
+    width: 100vw;
+    height: 10vh;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 999;
+}
+ul { 
+    margin: 0px auto 0; 
+    padding: 0; 
+    list-style: none; 
+    display: table;
+    width: 40vw;
+    text-align: center;
+    font-family: forOpts;
+    color: rgb(0, 0, 0);
+  }
+  li { 
+    display: table-cell; 
+    position: relative; 
+    padding: 15px 0;
+  }
+  a {
+    /* color: rgb(0, 0, 0); */
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    color: rgb(0, 0, 0);
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
+  }
+  a:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: rgb(0, 0, 0);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  a:hover:after { 
+    width: 100%; 
+    left: 0; 
+  }
+  @media screen and (max-height: 300px) {
+      ul {
+          margin-top: 40px;
+      }
+  
+  }
+
+#footer{
+  height: 70vh;
+  width: 100vw;
+  background-color: #080808;
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: forOpts;
+}
+#footcontent{
+  text-align: center;
+}
+#maillistsub input{
+    padding: 10px;
+    height: 30px;
+    width: 15vw;
+}
+#maillistsub button {
+  height: 55px;
+  width: 15vw;
+  padding: 10px 30px;
+  border: 3px solid whitesmoke;
+  background-color: black;
+  color: whitesmoke;
+  transition: .2s;
+  font-size: 14px;
+  
+}
+
+#maillistsub button:hover{
+  background-color: whitesmoke;
+  color: black;
+}
+
+#instalogo{
+  filter: invert();
+  height: 50px;
+  margin-top: 50px;
+  transition: 0.3s;
+}
+#instalogo:hover{
+  transform: scale(1.2);
+}
+@media screen and (max-width: 600px){
+  #stickHeader{
+    position:fixed ;
+    visibility: hidden;
+    display: none;
+  }
+  #coursedetail{
+    margin-top: 0vh;
+    width: 100vw;
+    height: inherit;
+    padding-top: 0vh;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  #coursedetailtext{
+    position: relative;
+    margin-left: 0vw;
+    text-shadow: black 0px 0px 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  #coursecat{
+    visibility: hidden;
+  }
+  #courses{
+    height: inherit;
+    width: 100vw;
+    
+  }
+  #coursecattext h3{
+
+    float: left;
+  }
+  #coursecattext{
+    display: flex;
+  align-items: inherit;
+  justify-content: inherit;
+    width: 100vw;
+    height: inherit;
+    z-index: 990;
+  }
+  #coursecartextchild{
+    height: 10vh;
+    width: 90vw;
+    background-color: black;
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 0 5vw;
+  }
+  #register{
+    margin-top: 20vh;
+    height: 30vh;
+    width: 90vw;
+    margin-left: 5vw;
+  }
+  #handsontrin{
+    margin: 10vh 5vw;
+  }
+  #coursedetailschild{
+    margin-top: 0vh;
+    height: inherit;
+  }
+  #maillistsub button {
+    text-align: center;
+    position: absolute;
+    margin-top: 50px;
+    transform: translateX(-100%);
+    width: 50vw;
+  }
+  #maillistsub input{
+    width: 50vw;
+    padding: 0vw;
+    margin-bottom: 5vh;
+  }
+  #mobileheader , #mobileheaderslide {
+    visibility: visible;
+  }
+}
+</style>
+
+<body onload="pageloaded()">
+    
+    <div id="loadscr1"></div>
+    <div id="loadscr2"></div>
+<div class="mosaic-loader" id="loadscr">
+    <div class="cell d-0"></div>
+    <div class="cell d-1"></div>
+    <div class="cell d-2"></div>
+    <div class="cell d-3"></div>
+    <div class="cell d-1"></div>
+    <div class="cell d-2"></div>
+    <div class="cell d-3"></div>
+    <div class="cell d-4"></div>
+    <div class="cell d-2"></div>
+    <div class="cell d-3"></div>
+    <div class="cell d-4"></div>
+    <div class="cell d-5"></div>
+    <div class="cell d-3"></div>
+    <div class="cell d-4"></div>
+    <div class="cell d-5"></div>
+    <div class="cell d-6"></div>
+</div>
+    
+    <div id="pagecontent" style="visibility: hidden;">
+        <div id="mobileheader">
+            <img onclick="loadmennu()" src="menu.png">
+            <h4 id="mobileheadtex" style="display: none;">PRANALI'S BEAUTY ACADEMY</h4>
+        </div>
+        <div id="mobileheaderslide">
+            <a href="/Pranali%20Institute/home.html">Home</a>
+            <a href="/Pranali%20Institute/services.html">Services</a>
+            <a href="/Pranali%20Institute/courses.html">Courses</a>
+            <a href="/Pranali%20Institute/contact.html">Contact</a>
+        </div>
+        <div id="stickHeader">
+            <!-- <p class="head_opts">Home</p>
+            <p class="head_opts">Gallery</p>
+            <p class="head_opts">Contact Us</p>
+            <p class="head_opts">About</p> -->
+            <ul>
+                <li><a href="/Pranali%20Institute/home.html">Home</a></li>
+                <li><a href="/Pranali%20Institute/services.html">Services</a></li>
+                <li><a href="/Pranali%20Institute/courses.html">Courses</a></li>
+                <li><a href="/Pranali%20Institute/contact.html">Contact</a></li>
+              </ul>
+        </div>
+    <div class="slider coursepgslidermrg">
+        <div id="courses" style="padding-top: 5vh;">
+            <div id="coursecat"></div>
+            <div id="coursecattext">
+                <div id="coursecartextchild">
+                    <h1>Skin</h1>
+                    <!-- <h3 onclick="changecoursedtl(0)">▪ Skin</h3>
+                    <h3 onclick="changecoursedtl(1)">▪ Hair</h3>
+                    <h3 onclick="changecoursedtl(2)">▪ Makeup</h3>
+                    <h3 onclick="changecoursedtl(3)">▪ Manicure and Pedicure</h3>
+                    <h3 onclick="changecoursedtl(4)">▪ Salon Managment</h3> -->
+                </div>
+            </div>
+            <div id="coursedetail" class="parallax-window" data-parallax="scroll" data-speed="0.4" data-image-src="Images/skincare.webp">
+                <div id="coursedetailtext">
+                    <div id="coursedetailschild">
+                        <div id="handsontrin">
+                            <h1>GET HANDS-ON TRAINING IN:</h1>
+                            <div id="TRAININGIN" class="traning_grid">
+                                <h4>▪ Skin science</h4>
+                                <h4>▪ Cosmetic Chemistry</h4>
+                                <h4>▪ Basics of skin</h4>
+                                <h4>▪ Skin function</h4>
+                                <h4>▪ Skin pathology</h4>
+                            </div>
+                            <h1>INDUSTRY SKILLS GAINED</h1>
+                            <div id="industryskills" class="traning_grid">
+                                <h4>▪ Knowledge of the history of skin and beauty</h4>
+                                <h4>▪ Practical experience with skin treatments</h4>
+                                <h4>▪ Working with advanced machines</h4>
+                                <h4>▪ Learning advanced techniques in skin preparation</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slider coursepgslidermrg">
+        <div id="courses">
+            <div id="coursecat"></div>
+            <div id="coursecattext">
+                <div id="coursecartextchild">
+                    <h1>Hair</h1>
+                </div>
+            </div>
+            <div id="coursedetail" class="parallax-window" data-parallax="scroll" data-speed="0.4" data-image-src="Images/haircare.webp">
+                <div id="coursedetailtext">
+                    <div id="coursedetailschild">
+                        <div id="handsontrin">
+                            <h1>GET HANDS-ON TRAINING IN:</h1>
+                            <div id="TRAININGIN" class="traning_grid">
+                                <h4>▪ Hair Science</h4>
+                                <h4>▪ Hair spas, treatments, and rituals</h4>
+                                <h4>▪ Classic and advanced hair cuts</h4>
+                                <h4>▪ Shampoo and conditioning</h4>
+                                <h4>▪ Hair styling</h4>
+                                <h4>▪ Men’s hair and barbering</h4>
+                                <h4>▪ Basic hair cuts</h4>
+                                <h4>▪ Oil massages and hair care</h4>
+                            </div>
+                            <h1>INDUSTRY SKILLS GAINED</h1>
+                            <div id="industryskills" class="traning_grid">
+                                <h4>▪ Hands-on experience of working on different hair types</h4>
+                                <h4>▪ Using advanced techniques and hair tools</h4>
+                                <h4>▪ Professional leadership skills required within the industry</h4>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slider coursepgslidermrg">
+        <div id="courses">
+            <div id="coursecat"></div>
+            <div id="coursecattext">
+                <div id="coursecartextchild">
+                    <h1>MakeUp</h1>
+                </div>
+            </div>
+            <div id="coursedetail" class="parallax-window" data-parallax="scroll" data-speed="0.4" data-image-src="Images/makeup.jpeg">
+                <div id="coursedetailtext">
+                    <div id="coursedetailschild">
+                        <div id="handsontrin">
+                            <h1>GET HANDS-ON TRAINING IN:</h1>
+                            <div id="TRAININGIN" class="traning_grid">
+                                <h4>▪ Facial anatomy</h4>
+                                <h4>▪ Fantasy makeup</h4>
+                                <h4>▪ Introduction to photography and creating stunning visuals</h4>
+                                <h4>▪ Contouring techniques</h4>
+                                <h4>▪ Film, fashion and glamour makeup</h4>
+                                <h4>▪ Colour application</h4>
+                                <h4>▪ Advanced correction and sculpting</h4>
+                                <h4>▪ Personal grooming</h4>
+                                <h4>▪ Bridal makeup</h4>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slider coursepgslidermrg">
+        <div id="courses">
+            <div id="coursecat"></div>
+            <div id="coursecattext">
+                <div id="coursecartextchild">
+                    <h1>Manicure and Pedicure</h1>
+
+                </div>
+            </div>
+            <div id="coursedetail" class="parallax-window" data-parallax="scroll" data-speed="0.4" data-image-src="Images/manicure.jpeg">
+                <div id="coursedetailtext">
+                    <div id="coursedetailschild">
+                        <div id="handsontrin">
+                            <h1>GET HANDS-ON TRAINING IN:</h1>
+                            <div id="TRAININGIN" class="traning_grid">
+                                <h4>▪ Cut, file, and polish</h4>
+                                <h4>▪ Manicure</h4>
+                                <h4>▪ Hand masques</h4>
+                                <h4>▪ French manicure and pedicure</h4>
+                                <h4>▪ Pedicure</h4>
+                                <h4>▪ Feet masques</h4>
+                            </div>
+                            <h1>INDUSTRY SKILLS GAINED</h1>
+                            <div id="industryskills" class="traning_grid">
+                                <h4>▪ Experience through practical application</h4>
+                                <h4>▪ Using advanced techniques and hair tools</h4>
+                                <h4>▪ Understanding different nailcare procedures</h4>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slider coursepgslidermrg">
+        <div id="courses">
+            <div id="coursecat"></div>
+            <div id="coursecattext">
+                <div id="coursecartextchild">
+                    <h1>Salon Managment</h1>
+                </div>
+            </div>
+            <div id="coursedetail" class="parallax-window" data-parallax="scroll" data-speed="0.4" data-image-src="Images/salon.jpeg">
+                <div id="coursedetailtext">
+                    <div id="coursedetailschild">
+                        <div id="handsontrin">
+                            <h1>GET HANDS-ON TRAINING IN:</h1>
+                            <div id="TRAININGIN" class="traning_grid">
+                                <h4>▪ End-To-End Salon Management</h4>
+                                <h4>▪ Crisis Management</h4>
+                                <h4>▪ Customer Handling</h4>
+                                <h4>▪ Inventory Management</h4>
+                                <h4>▪ Salon Recruitment & Staffing</h4>
+                                <h4>▪ People Management</h4>
+                                <h4>▪ Salon Marketing</h4>
+                                <h4>▪ Optimising Business</h4>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slider">
+        <div id="register">
+            <h1>REGISTER NOW. CALL US AT +91-77458-73836</h1>
+        </div>
+    </div>
+    <div class="slider">
+        <div id="footer">
+            <div id="footcontent">
+                <h2 style="margin-bottom: 5vh; font-size: 30px;">+91 77458 73836</h2>
+                <h2 id="toputthnks">JOIN OUR LIST</h2>
+                <p>Subscribe to our mailing list to receive updates and promotional offers.</p> 
+                <form id="maillistsub">
+                    <input type="text" placeholder="Email Id Or Phone No." name="mailId">
+                    <button id="subbtn" type="button" onclick="submitlist()">SUBSCRIBE</button>
+                </form>
+                <a href="https://www.instagram.com/pranalisbeauty/">
+                    <img id="instalogo" src="Instagram-Logo.jpg">
+                </a>
+                <p>Pranali's Beauty Academy and Institute ©2021</p>
+                <a style="color: whitesmoke;text-transform: none; font-size: 14px;" href="https://www.instagram.com/anandkamble_/">
+                    <p>Devoloped by Anand</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    
+function submitlist(){
+  let name = document.forms["maillistsub"]["mailId"].value;
+  var phpcodetosubmit = 'mailId='+name;
+  if(!name==""){
+      $("#subbtn").text("POSTING...");
+      $.ajax({
+          type : "POST",
+          url : "list.php",
+          data : phpcodetosubmit,
+          cache : false,
+          success : function (res){
+              if(res == "true"){
+                  $("#maillistsub").fadeOut();
+                  $("#toputthnks").text("THANK YOU");
+              }else{
+                  alert("Failed to post. Please try again in sometime.");
+                  $("#subbtn").text("SUBSCRIBE");
+              }
+
+              
+          }
+      })
+  }else{
+      alert("Fill all the Details.")
+  }
+}
+</script>
+</html>
